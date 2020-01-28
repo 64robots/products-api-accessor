@@ -29,7 +29,7 @@ class GenerateProductsApiAccessToken extends Command
     public function __construct()
     {
         parent::__construct();
-        $this->client = new Client(['base_uri' => config('search.base_uri')]);
+        $this->client = new Client(['base_uri' => config('products.base_uri')]);
     }
 
     /**
@@ -50,8 +50,8 @@ class GenerateProductsApiAccessToken extends Command
         $response = $this->client->request('POST', 'oauth/token', [
             'form_params' => [
                 'grant_type' => 'client_credentials',
-                'client_id' => config('search.client_id'),
-                'client_secret' => config('search.client_secret'),
+                'client_id' => config('products.client_id'),
+                'client_secret' => config('products.client_secret'),
                 'scope' => '*',
             ]
         ]);
@@ -62,14 +62,14 @@ class GenerateProductsApiAccessToken extends Command
     {
         file_put_contents($this->laravel->environmentFilePath(), preg_replace(
             $this->tokenReplacementPattern(),
-            'SEARCH_API_ACCESS_TOKEN='.$accessToken,
+            'PRODUCT_API_ACCESS_TOKEN='.$accessToken,
             file_get_contents($this->laravel->environmentFilePath())
         ));
     }
 
     private function tokenReplacementPattern()
     {
-        $escaped = preg_quote('='.config('search.access_token'), '/');
-        return "/^SEARCH_API_ACCESS_TOKEN{$escaped}/m";
+        $escaped = preg_quote('='.config('products.access_token'), '/');
+        return "/^PRODUCT_API_ACCESS_TOKEN{$escaped}/m";
     }
 }
