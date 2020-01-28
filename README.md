@@ -20,7 +20,7 @@ $ php artisan vendor:publish --provider="R64\ProductsApiAccessor\AccessorService
 ```
 
 ## Usage
-- Use passport's command `php artisan passport:client` to generate new Client ID and Client Secret from [Products api](https://gitlab.com/64robots/products-api). Copy the Client ID and Client Secret and set it in this .env like so;
+- Use passport's command `php artisan passport:client` to generate new Client ID and Client Secret from [Products api](https://gitlab.com/64robots/products-api). Copy the Client ID and Client Secret and set it in your .env like so;
 
 ```
 PRODUCTS_API_BASE_URI=http://url-to-products-api

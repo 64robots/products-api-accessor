@@ -3,7 +3,7 @@
 namespace R64\ProductsApiAccessor;
 
 use Illuminate\Support\ServiceProvider;
-use 64R\ProductsApiAccessor\Command\GenerateProductsApiAccessToken;
+use R64\ProductsApiAccessor\Command\GenerateProductsApiAccessToken;
 
 class AccessorServiceProvider extends ServiceProvider
 {
