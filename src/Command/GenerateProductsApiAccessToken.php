@@ -62,7 +62,7 @@ class GenerateProductsApiAccessToken extends Command
     {
         file_put_contents($this->laravel->environmentFilePath(), preg_replace(
             $this->tokenReplacementPattern(),
-            'PRODUCT_API_ACCESS_TOKEN='.$accessToken,
+            'PRODUCTS_API_ACCESS_TOKEN='.$accessToken,
             file_get_contents($this->laravel->environmentFilePath())
         ));
     }
@@ -70,6 +70,6 @@ class GenerateProductsApiAccessToken extends Command
     private function tokenReplacementPattern()
     {
         $escaped = preg_quote('='.config('products.access_token'), '/');
-        return "/^PRODUCT_API_ACCESS_TOKEN{$escaped}/m";
+        return "/^PRODUCTS_API_ACCESS_TOKEN{$escaped}/m";
     }
 }

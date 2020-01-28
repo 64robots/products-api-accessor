@@ -4,7 +4,7 @@ return [
     /**
      * Base url for products
      */
-    'base_url' => env('PRODUCTS_API_BASE_URI'),
+    'base_uri' => env('PRODUCTS_API_BASE_URI'),
 
     /**
      * Client ID generated from products api
