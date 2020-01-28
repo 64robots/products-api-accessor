@@ -1,0 +1,49 @@
+{
+    "name": "64robots/products-api-accessor",
+    "description": "This package is a command that will generate the access-token for a product-api project.",
+    "keywords": [
+        "64Robots",
+        "R64",
+        "products",
+        "api",
+        "accessor"
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "~5.8|6.*",
+        "illuminate/container": "~5.8|6.*",
+        "illuminate/console": "5.8|6.*",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "R64\\ProductsApiAccessor\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "R64\\ProductsApiAccessor\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "R64\\ProductsApiAccessor\\AccessorServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
