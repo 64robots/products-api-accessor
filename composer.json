@@ -21,10 +21,7 @@
     "autoload": {
         "psr-4": {
             "R64\\ProductsApiAccessor\\": "src"
-        },
-        "files": [
-            "src/helpers.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
